@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>
+    surveillance reader
+  </title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+
+    body {
+      cursor: cell;
+      font-family: monospace;
+      background-color: black;
+      color: white;
+      height: 100vh;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      margin: 0;
+    }
+
+    div {
+      background-color:red;
+      position: fixed;
+      border-radius: 50%;
+      height: 30px;
+      width: 30px;
+      z-index: -10;
+    }
+
+    h1 {
+      position: absolute;
+      top: 130px;
+      right: 80px;
+      margin: 0;
+      font-size: 30px;
+      position: relative;
+      z-index: 10;
+    }
+
+    section {
+      height: 100%;
+      position: relative;
+      padding: 8px;
+      border: 8px solid rgb(116, 15, 248);
+    }
+
+    section h2 {
+      font-size: 1em;
+      color: rgb(233, 250, 233);
+      position: relative;
+      z-index: 10;
+    }
+
+    section p {
+      font-size: 1.25em;
+      color: honeydew;
+      position: relative;
+      z-index: 10;
+    }
+
+    section pre {
+      font-size: 1.5em;
+      color: springgreen;
+      padding: 30px;
+      margin: 0 auto;
+      width: 600px;
+      position: relative;
+      z-index: 10;
+    }
+
+    section code {
+      margin-top: 40px;
+      display: block;
+      width: 100%;
+      padding: 30px;
+      font-size: 3em;
+      position: relative;
+      z-index: 10;
+    }
+
+    section code span {
+      color: orangered;
+    }
+
+    section strong {
+      font-size: 3em;
+    }
+
+    section em {
+      font-size: 1.125em;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <h1>critical surveillance reader</h1>
+    <p>
+      veillance project ~ 2019
+      <br>
+      by emma rae, sukanya aneja & nick gregg
+      <br>
+    </p>
+  </section>
+
+  <section>
+    <h2>hi :-)</h2>
+    <p>
+      what is <strong>surveillance</strong>?
+    </p>
+  </section>
+
+  <section>
+    <h2>why is it important to be critical of it?</h2>
+    <p>
+      nothing here yet...
+    </p>
+  </section>
+
+  <section>
+    <h2>more questions!</h2>
+    <p>@sukanya @nick what do you <strong>think</strong> of this <em>format?</em></p>
+  </section>
+
+  <section>
+    <h2>more questions!</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, perspiciatis commodi odit nihil, incidunt
+      exercitationem fugiat voluptas molestias tempora, reprehenderit dignissimos? Quaerat impedit eos dolore laboriosam
+      illo ut accusamus iste.</p>
+  </section>
+
+
+  <section>
+    <h2>more questions!</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, perspiciatis commodi odit nihil, incidunt
+      exercitationem fugiat voluptas molestias tempora, reprehenderit dignissimos? Quaerat impedit eos dolore laboriosam
+      illo ut accusamus iste.</p>
+  </section>
+
+</body>
+
+<script type="application/javascript">
+  window.addEventListener('load', windowLoaded);
+  var pen = false;
+
+  function windowLoaded() {
+    document.addEventListener('mousemove', mouseMoved);
+    document.addEventListener('keydown', keyDown);
+  }
+
+  function keyDown(e) {
+    if (e.key === "Shift") {
+      pen = true;
+    } else if (e.key === "z") {
+      pen = false;
+    }
+  }
+
+  function mouseMoved(e) {
+    const m = document.createElement('div');
+    document.getElementsByTagName('body')[0].append(m);
+    // comment out to control mouse drawing
+    m.style.top = `${e.clientY}px`;
+    m.style.left = `${e.clientX}px`;
+
+    // uncomment to control mouse drawing
+    // if (pen) {
+    //   m.style.top = `${e.clientY}px`;
+    //   m.style.left = `${e.clientX}px`;
+    // }
+  }
+</script>
+
+</html>
